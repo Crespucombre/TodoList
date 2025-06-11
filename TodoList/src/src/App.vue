@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <p v-show="totalTask < 1">Jusqu'ici, vous n'avez aucune tâche à faire</p>
+
     <form @submit.prevent="submitTask(actualTask)" action="">
-      <button>Ajouter une tâche</button>
       <input
         type="text"
         placeholder="Ecrivez une tâche ici.."
         v-model="actualTask"
       />
+      <button>Ajouter une tâche</button>
     </form>
     <ul>
       <li
@@ -57,28 +58,50 @@ const submitTask = () => {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centre verticalement */
-  align-items: center; /* centre horizontalement */
-  height: 100vh;
-  background-color: rgb(27, 69, 97);
-  margin: none;
-}
-#app {
-  color: beige;
-  background-color: rgb(39, 51, 61);
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+              rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: rgb(46, 62, 114);
+  padding: 40px;
+  border-radius: 10px;
 }
 
-li {
+#app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(33, 43, 78);
+}
+
+p {
   color: white;
 }
 
+li {
+  color: rgb(255, 255, 255);
+  list-style: none;
+}
+
 ul {
+  border-radius: 1% / 62%;
+  margin: 3px;
+  background-color: rgb(12, 28, 44);
   list-style-type: none;
+  padding-right: 17%;
 }
 
 form {
+  background-color: rgb(244, 244, 244);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   display: flex;
-  gap: 10px;
+  gap: 41px;
 }
 
 input {
@@ -91,5 +114,9 @@ button {
   margin: 20px;
   padding: 8px 16px;
   font-size: 16px;
+}
+
+button:hover {
+  background-color: orange;
 }
 </style>
